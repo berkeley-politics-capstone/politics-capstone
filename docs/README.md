@@ -8,5 +8,5 @@ This capstone project runs from May through August of 2019, and we will be posti
 
 - [Cyprian Gascoigne](https://github.com/kippig)
 - [Kanitha Mann](https://github.com/kkmann1)
-- Matt Vay
+- [Matt Vay](https://github.com/mgvay31)
 - [Andrew Walters](https://github.com/andrewfwalters)
