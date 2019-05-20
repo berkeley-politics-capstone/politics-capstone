@@ -6,7 +6,7 @@ This capstone project runs from May through August of 2019, and we will be posti
 
 # About The Team
 
-- Cyprian Gascoigne
+- [Cyprian Gascoigne](https://github.com/kippig)
 - Kanitha Mann
 - Matt Vay
 - [Andrew Walters](https://github.com/andrewfwalters)
