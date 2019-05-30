@@ -1,3 +1,4 @@
 data/*
 !data/README.md
 keys/*
+.ipynb_checkpoints/
