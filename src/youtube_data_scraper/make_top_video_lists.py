@@ -26,6 +26,7 @@ def main(candidates_file="candidate_names.txt", loops=2, api_key="../../keys/you
     print("Getting data from YouTube API")
     try:
         for candidate in candidates:
+            print("Candidate", candidate, "querying.")
             directory = "../../data/Youtube/Lists_of_Videos/{}/{}".format(candidate[0], now)
             os.makedirs(directory, exist_ok=True)
 
@@ -45,9 +46,11 @@ def main(candidates_file="candidate_names.txt", loops=2, api_key="../../keys/you
                     json.dump(response, f)
 
                 page_token = response["nextPageToken"]
-            print("Candidate", candidate, "complete.")
+    except googleapiclient.errors.HttpError as e:
+        print(e)
     finally:
         # compile results to list even if API is down
+        print("compiling video list...")
         DATA_DIRECTORY = "../../data/Youtube/Lists_of_Videos/"
         rootdir_glob = DATA_DIRECTORY + '**/*'
         file_list = [f for f in iglob(rootdir_glob, recursive=True) if os.path.isfile(f)]
@@ -62,7 +65,7 @@ def main(candidates_file="candidate_names.txt", loops=2, api_key="../../keys/you
                                  , i + 1
                                  ))
         df = pd.DataFrame(data, columns=('videoId', 'candidate', 'day_observed', 'rank'))
-        df.to_csv(DATA_DIRECTORY + 'list_of_videos.csv', header=True)
+        df.to_csv('../../data/Youtube/list_of_videos.csv', header=True, index=False)
 
 
 if __name__ == "__main__":
