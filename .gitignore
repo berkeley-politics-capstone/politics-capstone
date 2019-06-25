@@ -2,9 +2,6 @@
 data/*
 !data/README.md
 keys/*
-
 # Random stuff
 src/youtube_data_scraper/api_tutorial.py
-
-
-
+.ipynb_checkpoints/
