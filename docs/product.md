@@ -1,7 +1,7 @@
 ---
 title: Our Product
 layout: template
-filename: product.md
+filename: product
 --- 
 
 # Our Product
