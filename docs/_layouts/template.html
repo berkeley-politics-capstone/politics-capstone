@@ -24,7 +24,7 @@
           
           <div class="topnav">
             {% for page in baseurl.pages %}
-            <a href={{ site.baseurl }}{{ page.filename }}>{{ page.title }}</a>
+            <a href={{ baseurl.page.filename }}>{{ page.title }}</a>
             {% endfor %}
           </div>
           
