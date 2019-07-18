@@ -1,6 +1,6 @@
 ---
 title: Hype Machine
-layout: template
+layout: default
 filename: index.md
 --- 
 
