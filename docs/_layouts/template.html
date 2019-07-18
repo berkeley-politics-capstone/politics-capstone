@@ -23,8 +23,8 @@
           <h2 id="project_tagline">Making Sense of the 2020 Presidential Elections</h2>       
           
           <div class="topnav">
-            {% for page in baseurl.pages %}
-            <a href={{ page.filename }}>{{ page.title }}</a>
+            {% for page in site.pages %}
+              <a href={{ page.filename }}>{{ page.title }}</a>
             {% endfor %}
           </div>
           
