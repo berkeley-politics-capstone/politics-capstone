@@ -1,7 +1,7 @@
 ---
 title: Home
 layout: template
-filename: index.md
+filename: index
 --- 
 
 # About This Project
