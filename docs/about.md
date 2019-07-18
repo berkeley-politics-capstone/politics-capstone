@@ -1,6 +1,6 @@
 ---
 title: About Us
-layout: template
+layout: default
 filename: about.md
 --- 
 
