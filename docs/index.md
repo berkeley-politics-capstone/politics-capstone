@@ -1,5 +1,5 @@
 ---
-title: Hype Machine
+title: Home
 layout: template
 filename: index.md
 --- 
