@@ -6,7 +6,7 @@ filename: about
 
 # About Us
 
-Insert text here
+We're so cool, we're so awesome
 
 # About The Team
 
