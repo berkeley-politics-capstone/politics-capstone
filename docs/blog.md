@@ -1,7 +1,7 @@
 ---
 title: Blogs
 layout: template
-filename: blog.md
+filename: blog
 --- 
 
 # Blogs
