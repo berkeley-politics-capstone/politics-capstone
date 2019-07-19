@@ -7,7 +7,7 @@ filename: product
 # Our Product    
 
 
-<iframe src="https://public.tableau.com/views/Candidate_Visualizations/MainDashboard?:showVizHome=no&:embed=true" align = "center" width = "500" height = "500"></iframe>
+<iframe src="https://public.tableau.com/views/Candidate_Visualizations/MainDashboard?:showVizHome=no&:embed=true" align = "center" width = "900" height = "900"></iframe>
 
 
 # About The Team
