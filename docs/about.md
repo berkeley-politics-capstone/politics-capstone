@@ -6,7 +6,7 @@ filename: about
 
 # About Our Team
 
-**Andrew Walters** . 
+**Andrew Walters** <br/>
 A few sentences about Andrew
 
 **Cyprian Gascoigne**/
