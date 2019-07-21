@@ -9,22 +9,16 @@ filename: about
 ![Walters Pic](Walters_Picture.jpg){:height="200px" width="300px"} <br/>
 **Andrew Walters** <br/>
 A few sentences about Andrew
-
-<br/>
 <br/>
 
 ![Gascoigne Pic](Gascoigne_Picture.jpg){:height="200px" width="300px"} <br/>
 **Cyprian Gascoigne** <br/>
 A few sentences about Cyprian
-
-<br/>
 <br/>
 
 ![Mann Pic](Mann_Picture.jpg){:height="200px" width="300px"} <br/>
 **Kanitha Mann** <br/>
 A few sentences about Kanitha
-
-<br/>
 <br/>
 
 ![Vay Pic](Vay_Picture.jpg){:height="200px" width="300px"} <br/>
