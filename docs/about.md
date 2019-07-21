@@ -3,6 +3,7 @@ title: About Us
 layout: template
 filename: about
 --- 
+
 # About Our Team
 
 ![Walters Pic](Walters_Picture.jpg){:height="200px" width="300px"} <br/>
