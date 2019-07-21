@@ -6,7 +6,7 @@ filename: hype
 
 # Measuring Hype
 
-#### Understanding the 2020 campaign requires analyzing multiple different sources of information in order to create a holistic view of this election. Our team has worked to identify and gather the data that will allow us to understand the hype surrounding a candidate.
+Understanding the 2020 campaign requires analyzing multiple different sources of information in order to create a holistic view of this election. Our team has worked to identify and gather the data that will allow us to understand the hype surrounding a candidate.
 <br/>
 
 **Donations** <br/>
