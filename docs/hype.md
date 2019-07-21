@@ -21,7 +21,7 @@ News outlets are a major source of information for Americans looking to understa
 
 **Polling** <br/>
 Polls allow us to get an understanding of where candidates rank relative to each other based off a sample of the American population. While polls may change drastically over time, we can still combine our understanding of polls with our other data sources to better evaluate candidate hype. <br/>
-*Data source: [538 Polling Data](https://github.com/fivethirtyeight/data/tree/master/polls)*
+*Data source: [FiveThirtyEight Polling Data](https://github.com/fivethirtyeight/data/tree/master/polls)*
 <br/>
 
 
