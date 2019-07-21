@@ -4,13 +4,17 @@ layout: template
 filename: about
 --- 
 
-# About Us
+# About Our Team
 
-We're so cool, we're so awesome
+**Andrew Walters**
+A few sentences about Andrew
 
-# About The Team
+**Cyprian Gascoigne**
+A few sentences about Cyprian
 
-- [Cyprian Gascoigne](https://github.com/kippig)
-- [Kanitha Mann](https://github.com/kkmann1)
-- [Matt Vay](https://github.com/mgvay31)
-- [Andrew Walters](https://github.com/andrewfwalters)
+**Kanitha Mann**
+A few sentences about Kanitha
+
+**Matt Vay**
+Matt currently lives in Seattle, WA with his wife, Emily. He graduated from the University of Washington with a degree in Industrial & Systems Engineering and began working for Boeing. After becoming interested in the growing industry of big data, Matt decided to pursue a degree in MIDS.
+
