@@ -10,9 +10,3 @@ This is a capstone project for the [Berkeley MIDS](https://datascience.berkeley.
 
 This capstone project runs from May through August of 2019, and we will be posting updates about our progress on this website.
 
-# About The Team
-
-- [Cyprian Gascoigne](https://github.com/kippig)
-- [Kanitha Mann](https://github.com/kkmann1)
-- [Matt Vay](https://github.com/mgvay31)
-- [Andrew Walters](https://github.com/andrewfwalters)
