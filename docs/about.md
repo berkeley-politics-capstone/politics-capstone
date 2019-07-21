@@ -16,7 +16,7 @@ A few sentences about Andrew
 A few sentences about Cyprian
 <br/>
 
-![Mann Pic](Mann_Picture.jpg){:height="200px" width="300px"} <br/>
+![Mann Pic](Mann_Picture.jpg){:height="200px" width="250px"} <br/>
 **Kanitha Mann** <br/>
 A few sentences about Kanitha
 <br/>
