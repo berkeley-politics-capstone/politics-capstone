@@ -11,4 +11,12 @@ Understanding the 2020 campaign requires analyzing multiple different sources of
 
 **Donations** <br/>
 Tracking donations provided to a candidates campaign allows us to see more than just a total amount of money raised. It allows us to understand the frequency of small donations by individuals, which could mean increased hype surrounding that candidate. <br/>
-Data provided by Federal Election Commission ([FEC](https://www.fec.gov/))
+*Data source: [Federal Election Commission (FEC)](https://www.fec.gov/)*
+<br/>
+
+**Media Coverage** <br/>
+News outlets are a major source of information for Americans looking to understand more about the election. Summarizing this data, we look to understand which candidates are receiving the most news coverage across all major networks and which may be trending in the right direction.
+*Data source: [GDELT Television API](https://blog.gdeltproject.org/gdelt-2-0-television-api-debuts/)*
+
+
+
