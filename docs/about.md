@@ -16,9 +16,9 @@ A few sentences about Andrew
 A few sentences about Cyprian
 <br/>
 
-![Mann Pic](Mann_Picture.jpg){:height="200px" width="250px"} <br/>
+![Mann Pic](Mann_Picture.jpg){:height="200px" width="300px"} <br/>
 **Kanitha Mann** <br/>
-A few sentences about Kanitha
+Kanitha Mann is a data scientist working for a start up in the healthcare industry. She earned a Bachelor’s degree in Mechanical Engineering from Georgia Tech and is excited to soon earn a Master's in Information and Data Science. Kanitha lives in Atlanta with her husband, Tony, and their nine year old boxer mix, Sadie.
 <br/>
 
 ![Vay Pic](Vay_Picture.jpg){:height="200px" width="300px"} <br/>
