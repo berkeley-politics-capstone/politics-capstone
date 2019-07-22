@@ -8,11 +8,10 @@ filename: blog
 
 Text here describing why we have the following posts as insights.
 
-<ul>
-  {% for post in site.posts %}
-    <li>
-      <a href="{{ post.url }}">{{ post.title }}</a>
-      {{ post.excerpt }}
-    </li>
-  {% endfor %}
-</ul>
+{% for post in site.posts %}
+  <a href="{{ post.url }}">
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.date | date_to_string }}</p>
+  </a>
+  <p>{{ post.excerpt }}</p>
+{% endfor %}
