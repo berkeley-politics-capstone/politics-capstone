@@ -9,8 +9,6 @@ filename: blog
 Text here describing why we have the following posts as insights.
 
 {% for post in site.posts %}
-  <a href="{{ post.url }}">
-  <h2>{{ post.title }}</h2></a><br />
-  {{ post.date | date_to_string }}
-  <p>{{ post.excerpt }}</p>
+  ###<a href="{{ post.url }}">{{ post.title }}</a>
+  {{ post.excerpt }}
 {% endfor %}
