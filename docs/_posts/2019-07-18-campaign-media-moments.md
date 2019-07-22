@@ -8,4 +8,4 @@ This is the first paragraph of the post called **{{ page.title }}.** This paragr
 
 # First Header - Do NOT put a header above the first paragraph!
 
-Here's a paragraph showing that it won't show upon the main blog page.
+Here's a paragraph showing that it won't show up on the main blog page as an excerpt, so we can continue to write the blog post in a normal fashion.
