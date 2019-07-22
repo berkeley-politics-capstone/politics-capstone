@@ -6,11 +6,13 @@ filename: blog
 
 # Blogs
 
-Insert text here
+Text here describing why we have the following posts as insights.
 
-# About The Team
-
-- [Cyprian Gascoigne](https://github.com/kippig)
-- [Kanitha Mann](https://github.com/kkmann1)
-- [Matt Vay](https://github.com/mgvay31)
-- [Andrew Walters](https://github.com/andrewfwalters)
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+      {{ post.excerpt }}
+    </li>
+  {% endfor %}
+</ul>
