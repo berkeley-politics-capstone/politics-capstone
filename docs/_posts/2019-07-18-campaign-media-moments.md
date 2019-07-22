@@ -1,7 +1,6 @@
 ---
 layout: post
 title:  "Measuring the Importance of Media Moments in a Campaign"
-categories: [insights]
 tags: [polls, media, favorability, fundraising]
 ---
 
