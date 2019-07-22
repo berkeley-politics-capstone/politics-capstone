@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: template
 title:  "Measuring the Importance of Media Moments in a Campaign"
 tags: [polls, media, favorability, fundraising]
 ---
