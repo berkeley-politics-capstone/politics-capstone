@@ -8,7 +8,7 @@ filename: about
 
 ![Walters Pic](Walters_Pic.jpg){:height="200px" width="300px"} <br/>
 **Andrew Walters** <br/>
-A few sentences about Andrew
+Andrew Walters is a Data Scientist working on Supply Chain Affordability at Lockheed Martin in the Greater Philadelphia Area. He is working on his Master's in Information and Data Science at Berkeley as part of Lockheed's Engineering Leadership Development Program. He will graduate both programs this August. Previously Andrew earned a Bachelors Degree in Computer Engineering and Computer Science at Villanova University.
 <br/>
 
 ![Gascoigne Pic](Gascoigne_Picture.jpg){:height="200px" width="300px"} <br/>
