@@ -6,7 +6,7 @@ filename: about
 
 # About Our Team
 
-![Walters Pic](Walters_Picture.jpg){:height="200px" width="300px"} <br/>
+![Walters Pic](Walters_Pic.jpg){:height="200px" width="300px"} <br/>
 **Andrew Walters** <br/>
 A few sentences about Andrew
 <br/>
