@@ -15,7 +15,7 @@ tk
 
 ## Reddit Comments
 
-tk
+{% include /plotly/reddit2020_lda.html %}
 
 ## Methodology
 
