@@ -20,10 +20,11 @@ Polling data is collected from FiveThirtyEight which compiles polling results fr
 #### Understanding Key Relationships
 One of the challenges associated with visualizing multiple different key metrics is understanding how they relate to one another. This chart normalizes the data associated with donations, airtime and polling and plots them together over a given date range. A user can then select a certain candidate and get a better idea which of the key metrics are related to each other.
 
-### Another header!
+### Donation Dashboard
+![Donation Dashboard](Donation_Dashboard.jpg){:height="200px" width="300px"} <br/>
 
-tk
+### Airtime Dashboard
+![Airtime Dashboard](Airtime_Dashboard.jpg){:height="200px" width="300px"} <br/>
 
-### Methodology
-
-tk
+### Polling Dashboard
+![Polling Dashboard](Polling_Dashboard.jpg){:height="200px" width="300px"} <br/>
