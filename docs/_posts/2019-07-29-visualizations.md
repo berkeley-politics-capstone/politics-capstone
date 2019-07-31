@@ -5,8 +5,6 @@ title:  "Our Methodology for Visualizations"
 
 This post will provide a walkthrough of our visualizations and how a user can better gather insight from our product.
 
-![Vay Pic](Vay_Picture.jpg){:height="200px" width="300px"} <br/>
-
 ## Main Dashboard
 ![Main_Dashboard](Main_Dashboard.jpg){:height="200px" width="300px"} <br/>
 
