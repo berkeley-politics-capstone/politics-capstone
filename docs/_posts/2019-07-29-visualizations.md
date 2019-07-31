@@ -5,7 +5,7 @@ title:  "Our Methodology for Visualizations"
 
 This post will provide a walkthrough of our visualizations and how a user can better gather insight from our product.
 
-### Main Dashboard
+## Main Dashboard
 ![Main_Dashboard](Main_Dashboard.jpg){:height="200px" width="300px"} <br/>
 
 #### Donations
@@ -20,11 +20,11 @@ Polling data is collected from FiveThirtyEight which compiles polling results fr
 #### Understanding Key Relationships
 One of the challenges associated with visualizing multiple different key metrics is understanding how they relate to one another. This chart normalizes the data associated with donations, airtime and polling and plots them together over a given date range. A user can then select a certain candidate and get a better idea which of the key metrics are related to each other.
 
-### Donation Dashboard
+## Donation Dashboard
 ![Donation_Dashboard](Donation_Dashboard.jpg){:height="200px" width="300px"} <br/>
 
-### Airtime Dashboard
+## Airtime Dashboard
 ![Airtime_Dashboard](Airtime_Dashboard.jpg){:height="200px" width="300px"} <br/>
 
-### Polling Dashboard
+## Polling Dashboard
 ![Polling_Dashboard](Polling_Dashboard.jpg){:height="200px" width="300px"} <br/>
