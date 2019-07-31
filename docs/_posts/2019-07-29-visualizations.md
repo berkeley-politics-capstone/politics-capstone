@@ -39,5 +39,15 @@ Donations by city provide the user with a different view of looking at the state
 ## Airtime Dashboard
 ![Airtime_Dashboard](Airtime_Dashboard.jpg){:height="200px" width="300px"} <br/>
 
+#### Airtime by Month (Top Chart)
+The time series provides a view by network of how much airtime the selected candidate it getting each month. This allows the user to see if their candidate is trending in the right direction by receiving more airtime from networks. It also helps to better understand why they had certain peaks in airtime percent.
+
+#### Airtime by Network (Bottom Left Chart)
+This chart aggregates the data from above into a number that can be used to rank which networks have devoted the most airtime to the selected candidate. From here, the user can select a given network bar and have the chart on the right update to display the network.
+
+#### Airtime by Candidate (Bottom Right Chart)
+Based off what network the user has selected from the chart on the left, the airtime by candidate chart will provide the user with the ranking of candidates for the selected network. The user can then determine where their candidate falls in the overall ranking of that network.
+
+
 ## Polling Dashboard
 ![Polling_Dashboard](Polling_Dashboard.jpg){:height="200px" width="300px"} <br/>
