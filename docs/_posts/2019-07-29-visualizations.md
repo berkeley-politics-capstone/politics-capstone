@@ -17,6 +17,9 @@ Airtime data is retrieved from the GDELT TV API which is a platform that takes 1
 #### Polling
 Polling data is collected from FiveThirtyEight which compiles polling results from the major pollsters. This graphic then ranks how well each candidate is performing on average in the polls relative to their opponents. The default date range is selected for the last 3 months but can be adjusted based off the users specifications. Once again, to drill down, hover over the bar and select.
 
+#### Understanding Key Relationships
+One of the challenges associated with visualizing multiple different key metrics is understanding how they relate to one another. This chart normalizes the data associated with donations, airtime and polling and plots them together over a given date range. A user can then select a certain candidate and get a better idea which of the key metrics are related to each other.
+
 ### Another header!
 
 tk
