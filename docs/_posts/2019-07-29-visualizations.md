@@ -3,11 +3,11 @@ layout: template
 title:  "Our Methodology for Visualizations"
 ---
 
-Intro text will be placed in this section and automatically get reflected on the Blog page.
+This post will provide a walkthrough of our visualizations and how a user can better gather insight from our product.
 
-### A header!
+### Main Dashboard
+![Main Dashboard](Main_Dashboard.png){:height="200px" width="300px"} <br/>
 
-tk
 
 ### Another header!
 
