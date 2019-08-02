@@ -32,12 +32,18 @@ We used [Pushshift Reddit API](https://github.com/pushshift/api) to gather the d
 
 ### Cleaning and Pre-processing
 
-(Some nuances about news articles here?)
+We noticed that only 20% of the news articles failed to pull any data, but for those that did the data was complete. News articles were associated with candidates based on their commonly used name, which is usually their last name. Some noteable exceptions are 'Beto' (O'Rourke), 'Tulsi' (Gabbard) and 'Bernie'. Additionally, articles which mentioned both Castro and Cuba were removed due to Julián Castro sharing his name with Fidel and Raúl Castro. For the main LDA topic model we filtered out all news articles that did not mention at least one candidate (excluding Trump).
 
 Raw reddit comments are left in there markdown forms, so the text had to be scraped of this formatting and converted to regular text. Comments may also be deleted or removed at a later time, which will be indicated by a [deleted] or [removed] in their comment body. These comments were removed from the dataset. Since karma score is a unique feature of Reddit, in which popular links and comments are "upvoted" and unpopular links and comments are "downvoted", we wanted to provide this community feedback in our dataset. We did this by duplicating comments based on the log of their karma score. The most popular comments were duplicated up to ten times. Any comments less than 0 karma were removed. Finally, Reddit comments are featured in a tree structure, where the parent of the tree is in direct response to the link or main post, while children are typically in response to other comments. We chose to only keep the parent comments in order to reduce [topic divergence.](https://cs224d.stanford.edu/reports/ChowHong.pdf)
 
 For both articles and comments, text was stemmed, lemmatized, and converted to a corpus of [Bag of Words](https://en.wikipedia.org/wiki/Bag-of-words_model) for use in the model.
 
 ### Modeling
+
+After the Bag of Words has been created, we created several models:
+
+##### News Models
+
+In order to test proof of concept we created a 20 topic LDA model with all news articles (regardless of relevance to the 2020 primaries). This was largely successful as a proof of concept. We then truncated the news set down to articles containing 2020 Democratic Candidates and created 50-70-100 topic models with experimentation on other hyperparameters such as chunksize, passes and iterations. (See [Gensim](https://radimrehurek.com/gensim/models/ldamodel.html) documentation for details). We found that 100 topics, 10 passes, 400 iterations and 2000 document chunksize created a model with enough features and apparent accuracy for finding interesting insights. The LDA model itself does not tag the topics so we tagged the topics [ourselves](https://docs.google.com/spreadsheets/d/1G1wjjoacTZ7nQqt-Do5zBmPXyLDpA9mqf7pH6knNvkA/edit?usp=sharing). These tagged topics were then normalized (since 47 topics were removed) and aggregated into daily and weekly datasets.
 
 
