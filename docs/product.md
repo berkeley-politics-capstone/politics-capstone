@@ -6,7 +6,7 @@ filename: product
 
 # Our Product    
 
-We've provided a walkthrough of our visualizations and how a user can better gather insight from our product. [Click here](#the dashboard) to skip to the dashboard.
+We've provided a walkthrough of our visualizations and how a user can better gather insight from our product. [Click here](#Dashboard) to skip to the dashboard.
 
 ## Main Dashboard
 ![Main_Dashboard](Main_Dashboard.jpg){:height="200px" width="300px"} <br/>
@@ -61,6 +61,6 @@ This displays the polling percentage for the given candidate based off the date 
 ##### Polling Percent by Pollster (Bottom Chart)
 Each pollster has an average polling percentage for the given candidate so the user can understand the distribution of percentages. FiveThirtyEight has also provided a grade for each pollster based off how they polled in the 2016 election so the user can understand where the reputable polls are placing their candidate.
 
-# The Dashboard
+# Dashboard
 
 <iframe src="https://public.tableau.com/views/Candidate_Visualizations/Main?:showVizHome=no&:embed=true" align = "center" width = "1400" height = "950"></iframe>
