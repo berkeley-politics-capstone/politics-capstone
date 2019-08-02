@@ -6,7 +6,7 @@ title:  "Our Methodology for Visualizations"
 This post will provide a walkthrough of our visualizations and how a user can better gather insight from our product.
 
 ## Main Dashboard
-![Main_Dashboard]{%Main_Dashboard.jpg%} <br/>
+{% inclue Main_Dashboard.jpg %} <br/>
 
 ##### Donations (Top Left Chart)
 This section provides a ranking of candidates by donations they have received. The data for this is retrieved from the Federal Election Commission (FEC) website. They provide quarterly updates that allow us to understand how are candidate is performing relative to the other candidates in the field. The default date range is selected for this current year but can be updated by the user to any time frame. To get more information on your candidate, hover over his/her bar and select to drill down.
