@@ -13,7 +13,7 @@ Andrew Walters is a Data Scientist working on Supply Chain Affordability at Lock
 
 ![Gascoigne Pic](Gascoigne_Picture.jpg){:height="200px" width="300px"} <br/>
 **Cyprian Gascoigne** <br/>
-A few sentences about Cyprian
+Cyprian is a data scientist working in consumer credit and lending. He will graduate from Berkeley's with a Masters in Data Science in August 2019. Previously he studied Mathematics at the University of Washington.
 <br/>
 
 ![Mann Pic](Mann_Picture.jpg){:height="225px" width="300px"} <br/>
