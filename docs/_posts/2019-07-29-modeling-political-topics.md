@@ -18,6 +18,8 @@ We created a LDA model trained to categorize 100 topics. We choose a high number
 For instance, we can detect disucssion of the first democractic primary debate as seen in the following chart:
 ![First_Debate_Topics](First_Debate_Topic_Frequency.png){:height="200px" width="300px"} <br/>                                    
 
+
+
 ## Reddit Comments
 
 tk
@@ -44,6 +46,8 @@ After the Bag of Words has been created, we created several models:
 
 ##### News Models
 
-In order to test proof of concept we created a 20 topic LDA model with all news articles (regardless of relevance to the 2020 primaries). This was largely successful as a proof of concept. We then truncated the news set down to articles containing 2020 Democratic Candidates and created 50-70-100 topic models with experimentation on other hyperparameters such as chunksize, passes and iterations. (See [Gensim](https://radimrehurek.com/gensim/models/ldamodel.html) documentation for details). We found that 100 topics, 10 passes, 400 iterations and 2000 document chunksize created a model with enough features and apparent accuracy for finding interesting insights. The LDA model itself does not tag the topics so we tagged the topics [ourselves](https://docs.google.com/spreadsheets/d/1G1wjjoacTZ7nQqt-Do5zBmPXyLDpA9mqf7pH6knNvkA/edit?usp=sharing). These tagged topics were then normalized (since 47 topics were removed) and aggregated into daily and weekly datasets.
+In order to test proof of concept we created a 20 topic LDA model with all news articles (regardless of relevance to the 2020 primaries). This was largely successful as a proof of concept. We then truncated the news set down to articles containing 2020 Democratic Candidates and created 50-70-100 topic models with experimentation on other hyperparameters such as chunksize, passes and iterations. (See [Gensim](https://radimrehurek.com/gensim/models/ldamodel.html) documentation for details). We found that 100 topics, 10 passes, 400 iterations and 2000 document chunksize created a model with enough features and apparent accuracy for finding interesting insights. The LDA model itself does not tag the topics so we tagged the topics [ourselves](https://docs.google.com/spreadsheets/d/1G1wjjoacTZ7nQqt-Do5zBmPXyLDpA9mqf7pH6knNvkA/edit?usp=sharing). These tagged topics were then normalized (since 47 topics were removed) and aggregated into daily and weekly datasets. Here is a visualization of the model before we trimmed out 47 topics:
+
+{% include /plotly/nameoffile.html %}
 
 
