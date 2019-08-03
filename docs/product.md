@@ -6,7 +6,7 @@ filename: product
 
 # Our Product    
 
-We've provided a walkthrough of our visualizations and how a user can better gather insight from our product. [Click here](#Dashboard) to skip to the dashboard.
+We've provided a walkthrough of our visualizations and how a user can better gather insight from our product. [Click here](#dashboard) to skip to the dashboard.
 
 ## Main Dashboard
 ![Main_Dashboard](Main_Dashboard.jpg){:height="200px" width="300px"} <br/>
