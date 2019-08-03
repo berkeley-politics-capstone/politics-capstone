@@ -16,7 +16,7 @@ We used two main sets of textual data to discover topics brought up during the b
 We created a LDA model trained to categorize 100 topics. We choose a high number of topics so that we can filter down topics that are of little interest (such as Stephanopoulus) while still capturing as many useful topics as possible. The final topic count is [53](https://github.com/berkeley-politics-capstone/politics-capstone/blob/master/data/LDA_news_topics).
 
 For instance, we can detect discussion of the first democractic primary debate as seen in the following chart:
-![First_Debate_Topics]({{site: baseurl}}/docs/First_Debate_Topic_Frequency.png){:height="200px" width="300px"} <br/>                                    
+![First_Debate_Topics](/docs/First_Debate_Topic_Frequency.png){:height="200px" width="300px"} <br/>                                    
 
 
 
