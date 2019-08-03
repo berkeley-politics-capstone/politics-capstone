@@ -135,12 +135,11 @@ Perceptions
 
 	think, really, would, something, actually, thats, probably, understand
 	
-These topics indicate that Reddit's comment section is more of a place to describe the voter's feeling as it pertains to the candidates, their policy, or the current happenings around them.
-
-Reddit's biases means that a couple of candidates like Trump and Sanders take up much of Reddit's discussions. 
-
+Unlike the topics that arose in News Articles, where identity politics dominates, Reddit's comment section is more of a place to describe the voter's feeling as it pertains to the candidates, their policy, or the current happenings around them. While there is potential for these topics to shift to identity or policy, the topics will most likely stay centered around feelings as voters discuss the 2020 Democratic primary and its results leading up to the election against Trump.
 
 ## Conclusion
+
+Topic modeling allows us the ability to summarize discussions that are happening during the first couple months of the 2020 Democratic primary. We've noted that the media is mainly focused on candidate identity, while voters on internet forums will continually discuss their feelings for the candidates, their policies, and the current political landscape leading up to the primaries. The Hype Machine will always be influenced by the voices that participate in it. Topic modeling may be the way to get an idea of how the 2020 Democratic primary will shape up.
 
 ## Methodology
 
