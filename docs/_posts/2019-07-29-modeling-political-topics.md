@@ -19,9 +19,9 @@ For instance, we can detect discussion of the first democractic primary debate a
 
 ![First_Debate_Topics]({{site.baseurl}}/First_Debate_Topic_Frequency.png){:height="200px" width="300px"} <br/>                                    
 
-If you'd like to explore the model in detail, see the Methodology section below. What follows is the highlights of the model prediction and certain candidates including insights we can glean from how the media talks about candidates.
+If you'd like to explore the model in detail, see the [Methodology](#methodology) section below. What follows is the highlights of the model prediction and certain candidates including insights we can glean from how the media talks about candidates.
 
-For instance, in the follow chart we can see that the boder as a % of topics has declined significantly. Part of the reason the for this decline is the effects of new topics rising, such as many of the candidates announcing their runs for presidency.
+For instance, in the follow chart we can see that the border as a % of topics has declined significantly. Part of the reason the for this decline is the effects of new topics rising, such as many of the candidates announcing their runs for presidency.
 
 ![Border]({{site.baseurl}}/candidate_images/Border.png){:height="200px" width="300px"} <br/> 
 
@@ -101,11 +101,26 @@ Hickenlooper (this got mixed with Pence and Billionaires due to topic size):
 
 Most of the candidate topics above are about the indentity of the candidate, not their policy (with notable exceptions for Yang (UBI) and Inslee (Climate Change)). This tells us that the way the media talks about this wide Democractic field is through the candidates identity. It will be interesting to see as the field narrows if the tone shifts to more policy related ideas.
 
-For more information, explore the model in the methodology section below.
+For more information, explore the model in the [methodology](#methodology) section below.
 
 ## Reddit Comments
 
-tk
+50 topics were chosen to train the LDA model on the Reddit comments. While the topics generated from Reddit topics did center around candidates and current events such as the Russian interference investigation, there were a number of topics that consisted of descriptors and thoughts. Some of these topics include:
+
+Expressives
+
+	never, watch, enough, speak, stupid, throw, forget, truth
+	
+Perceptions
+
+	think, really, would, something, actually, thats, probably, understand
+	
+These topics indicate that Reddit's comment section is more of a place to describe the voter's feeling as it pertains to the candidates, their policy, or the current happenings around them.
+
+Some
+
+
+## Conclusion
 
 ## Methodology
 
