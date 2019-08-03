@@ -31,19 +31,19 @@ Also surprisingly, the Texan candidates who addressed border concerns in the deb
 
 The model can be used to detect events. Many of the topics have spikes around the first Democratic Primary debate in late June 2019. For example, during the debate Kamala Harris had a viral moment when she attack Joe Biden on the topic of school busing in the late 20th century. We see for these two candidates a clear spike in the topic of "Biden Busing", while for other candidates the spike is less remarkable (and also coincidental for these other candidates).
 
-![Biden_Busing](({{site.baseurl}}/candidate_images/Biden_Busing.png){:height="200px" width="300px"} <br/>
+![Biden_Busing]({{site.baseurl}}/candidate_images/Biden_Busing.png){:height="200px" width="300px"} <br/>
 
 We can pick up on some of the candidates top topics. For instance, Sanders and Warren are outliers when it comes to the topic of student debt.
 
-![Student_Debt](({{site.baseurl}}/candidate_images/Student_Debt.png){:height="200px" width="300px"} <br/>
+![Student_Debt]({{site.baseurl}}/candidate_images/Student_Debt.png){:height="200px" width="300px"} <br/>
 
 While Gabbard stands out on the topic of Iran:
 
-![Gabbard_Iran](({{site.baseurl}}/candidate_images/Iran_Gabbard.png){:height="200px" width="300px"} <br/> 
+![Gabbard_Iran]({{site.baseurl}}/candidate_images/Iran_Gabbard.png){:height="200px" width="300px"} <br/> 
 
 Jay Inslee is a climate change #1 campaigner. Here's his relationship to that topic:
 
-![inslee](({{site.baseurl}}/candidate_images/Climate_Change_Inslee.png){:height="200px" width="300px"} <br/> 
+![inslee]({{site.baseurl}}/candidate_images/Climate_Change_Inslee.png){:height="200px" width="300px"} <br/> 
 
 Generally, however we see that candidates in this latest leg of the 2020 primary are most often differentiated by identity and not policy. Here are the top words associated with each candidates topic:
 
