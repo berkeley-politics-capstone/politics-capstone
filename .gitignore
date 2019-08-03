@@ -2,6 +2,8 @@
 data/*
 !data/README.md
 keys/*
+src/.ipynb_checkpoints/*
 # Random stuff
 src/youtube_data_scraper/api_tutorial.py
 .ipynb_checkpoints/
+src/news_please/.DS_Store
