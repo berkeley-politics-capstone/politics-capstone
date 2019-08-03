@@ -18,6 +18,14 @@ We created a LDA model trained to categorize 100 topics. We choose a high number
 For instance, we can detect disucssion of the first democractic primary debate as seen in the following chart:
 ![First_Debate_Topics](First_Debate_Topic_Frequency.png){:height="200px" width="300px"} <br/>                                    
 
+If you'd like to explore the model in detail, see the Methodology section below. What follows is the highlights of the model prediction and certain candidates including insights we can glean from how the media talks about candidates.
+
+For instance, in the follow chart we can see that the boder as a % of topics has declined significantly. Part of the reason the for this decline is the effects of new topics rising, such as many of the candidates announcing their runs for presidency.
+![Border](candidate_images/Border.png){:height="200px" width="300px"} <br/> 
+
+The model can be used to detect events. Many of the topics have spikes around the first Democratic Primary debate in late June 2019. For example, during the debate Kamala Harris had a viral moment when she attack Joe Biden on the topic of school busing in the late 20th century. We see for these two candidates a clear spike in the topic of "Biden Busing", while for other candidates the spike is less remarkable (and also coincidental for these other candidates).
+
+![Biden Busing](candidate_images/Biden Busing.png){:height="200px" width="300px"} <br/>
 
 
 ## Reddit Comments
