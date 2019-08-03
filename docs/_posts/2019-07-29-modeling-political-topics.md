@@ -47,33 +47,57 @@ Jay Inslee is a climate change #1 campaigner. Here's his relationship to that to
 
 Generally, however we see that candidates in this latest leg of the 2020 primary are most often differentiated by identity and not policy. Here are the top words associated with each candidates topic:
 
-Biden was spread amongst other topics, but he did have a busing topic: biden, busing, would, school, oppose, senate, right, civil, support
+Biden was spread amongst other topics, but he did have a busing topic:
 
-Warren: warren, elizabeth, massachusetts, senator, american, native, plan, policy, presidential
+	 biden, busing, would, school, oppose, senate, right, civil, support
 
-Harris: attorney, prosecutor, officer, police, general, office, harris
+Warren:
+
+	 warren, elizabeth, massachusetts, senator, american, native, plan, policy, presidential
+
+Harris: 
+
+	attorney, prosecutor, officer, police, general, office, harris
 
 	harris, abortion, kamala, california, woman, right
 
-Sanders: sanders, democratic, party, bernie, candidate, campaign, progressive
+Sanders: 
+
+	sanders, democratic, party, bernie, candidate, campaign, progressive
 
 	sanders, campaign, iowa, event, bernie, crowd, hampshire
 
-Buttigieg: buttigieg, mayor, pete, south, bend
+Buttigieg:
 
-O'Rourke: rourke, beto, orourke, texas, paso, city, cruz
+	 buttigieg, mayor, pete, south, bend
 
-Booker: booker, cory, jersey, housing, home, senator, newark, mayor, latinx, city, community, black
+O'Rourke: 
 
-Inslee: inslee, climate, change, washington, governor, issue, state, seattle
+	rourke, beto, orourke, texas, paso, city, cruz
 
-Yang (mixed with Cuba): yang, andrew, cuba, cuban, basic, drudge, income, automation, communist, entrepreneur, latin, universal, dividend
+Booker: 
 
-Williamson: williamson, marianne, young, food, people, love, white, team, woman, spiritual, author
+	booker, cory, jersey, housing, home, senator, newark, mayor, latinx, city, community, black
 
-De Blasio: york, city, blasio, cuomo, mayor
+Inslee: 
 
-Hickenlooper (this got mixed with Pence and Billionaires due to topic size): pence, hickenlooper, colorado, mike, hannity, gates, governor, bezos
+	inslee, climate, change, washington, governor, issue, state, seattle
+
+Yang (mixed with Cuba):
+
+	 yang, andrew, cuba, cuban, basic, drudge, income, automation, communist, entrepreneur, latin, universal, dividend
+
+Williamson:
+
+	 williamson, marianne, young, food, people, love, white, team, woman, spiritual, author
+
+De Blasio: 
+
+	york, city, blasio, cuomo, mayor
+
+Hickenlooper (this got mixed with Pence and Billionaires due to topic size): 
+
+	pence, hickenlooper, colorado, mike, hannity, gates, governor, bezos
 
 Most of the candidate topics above are about the indentity of the candidate, not their policy (with notable exceptions for Yang (UBI) and Inslee (Climate Change)). This tells us that the way the media talks about this wide Democractic field is through the candidates identity. It will be interesting to see as the field narrows if the tone shifts to more policy related ideas.
 
