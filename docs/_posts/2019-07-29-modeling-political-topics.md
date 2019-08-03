@@ -15,8 +15,9 @@ We used two main sets of textual data to discover topics brought up during the b
 
 We created a LDA model trained to categorize 100 topics. We choose a high number of topics so that we can filter down topics that are of little interest (such as Stephanopoulus) while still capturing as many useful topics as possible. The final topic count is [53](https://github.com/berkeley-politics-capstone/politics-capstone/blob/master/data/LDA_news_topics).
 
-For instance, we can detect disucssion of the first democractic primary debate as seen in the following chart:
-![First_Debate_Topics](First_Debate_Topic_Frequency.png){:height="200px" width="300px"} <br/>                                    
+For instance, we can detect discussion of the first democractic primary debate as seen in the following chart:
+
+![First_Debate_Topics]({{site.baseurl}}/First_Debate_Topic_Frequency.png){:height="200px" width="300px"} <br/>                                    
 
 If you'd like to explore the model in detail, see the Methodology section below. What follows is the highlights of the model prediction and certain candidates including insights we can glean from how the media talks about candidates.
 
@@ -57,5 +58,11 @@ After the Bag of Words has been created, we created several models:
 In order to test proof of concept we created a 20 topic LDA model with all news articles (regardless of relevance to the 2020 primaries). This was largely successful as a proof of concept. We then truncated the news set down to articles containing 2020 Democratic Candidates and created 50-70-100 topic models with experimentation on other hyperparameters such as chunksize, passes and iterations. (See [Gensim](https://radimrehurek.com/gensim/models/ldamodel.html) documentation for details). We found that 100 topics, 10 passes, 400 iterations and 2000 document chunksize created a model with enough features and apparent accuracy for finding interesting insights. The LDA model itself does not tag the topics so we tagged the topics [ourselves](https://docs.google.com/spreadsheets/d/1G1wjjoacTZ7nQqt-Do5zBmPXyLDpA9mqf7pH6knNvkA/edit?usp=sharing). These tagged topics were then normalized (since 47 topics were removed) and aggregated into daily and weekly datasets. Here is a visualization of the model before we trimmed out 47 topics:
 
 {% include /plotly/news_article_lda_topic_explorer.html %}
+
+##### Comment Models
+
+{% include /plotly/reddit2020_lda.html %}
+
+
 
 
