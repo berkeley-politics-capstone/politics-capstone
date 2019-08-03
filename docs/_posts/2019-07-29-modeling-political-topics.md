@@ -105,7 +105,27 @@ For more information, explore the model in the [methodology](#methodology) secti
 
 ## Reddit Comments
 
-50 topics were chosen to train the LDA model on the Reddit comments. While the topics generated from Reddit topics did center around candidates and current events such as the Russian interference investigation, there were a number of topics that consisted of descriptors and thoughts. Some of these topics include:
+50 topics were chosen to train the LDA model on the Reddit comments. The topics generated from Reddit topics include current events:
+
+The Russia Investigation
+
+	president, Mueller, report, evidence, Congress, investigation, justice, impeachment
+	
+Sexual Allegations
+
+	claim, completely, idiot, threaten, attempt, assault, sexual, behavior
+	
+And candidates:
+
+Donald Trump
+
+	Trump, money, Trumps, Donald
+	
+Bernie Sanders
+
+	Bernie, support, Sanders, number, Bernies
+
+Even so, there were a number of topics that consisted of descriptors and thoughts. Some of these topics include:
 
 Expressives
 
@@ -117,7 +137,7 @@ Perceptions
 	
 These topics indicate that Reddit's comment section is more of a place to describe the voter's feeling as it pertains to the candidates, their policy, or the current happenings around them.
 
-Some
+Reddit's biases means that a couple of candidates like Trump and Sanders take up much of Reddit's discussions. 
 
 
 ## Conclusion
