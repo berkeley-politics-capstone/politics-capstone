@@ -5,26 +5,257 @@ date: "6/23/2019"
 output: pdf_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+## Libraries
+```{r message=FALSE, warning=FALSE}
+# visual
+library(knitr)
+library(kableExtra)
+library(ggplot2)
+library(ggpubr)
+library(stargazer)
+# data manipulation
+library(dplyr)
+library(reshape)
+library(MASS)
+# modeling
+library(stats)
+library(matrixStats)
+library(plm)
+library(lmtest)
+library(summarytools)
 ```
 
-## R Markdown
+## Load Data
+```{r message=FALSE, warning=FALSE}
+# clear workspace
+rm(list = ls())
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+data_cleanup <- function(df, start_date, end_date) {
+  df$date <- as.Date(df$date, format = "%Y-%m-%d")
+  df <- subset(df, date >= start_date )
+  df <- subset(df, date <=  end_date)
+  return(df)
+}
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+top_candidates <- function(df, n_candidates) {
+  avg_polls <- df %>%
+    group_by(candidate) %>%
+    summarize(mean = mean(polling_percentage_normalized, na.rm = TRUE))
+  avg_polls <- avg_polls[order(-(avg_polls$mean)),] 
+  top_list <- avg_polls[1:n_candidates,]
+  top_df <- subset(df, candidate %in% top_list$candidate)
+  bottom_list <- avg_polls[n_candidates+1:nrow(avg_polls),]
+  bottom_df <- subset(df, candidate %in% bottom_list$candidate)
+  return_dfs <- list(top=top_df, bottom=bottom_df)
+  return(return_dfs)
+}
 
-```{r cars}
-summary(cars)
+dem20 <- read.csv("../data/dem20_dataset.csv")
+dem20 <- data_cleanup(dem20, as.Date("2019-01-01"), as.Date("2019-06-30"))
+dem20_split <- top_candidates(dem20, 7)
+
+dem20_weekly <- read.csv("../data/dem20_weekly_dataset.csv")
+dem20_weekly <- data_cleanup(dem20_weekly, as.Date("2019-01-01"), as.Date("2019-06-30"))
+
+rep16 <- read.csv("../data/rep16_dataset.csv")
+rep16 <- data_cleanup(rep16, as.Date("2015-01-01"), as.Date("2016-12-31"))
+rep16_split <- top_candidates(rep16, 5)
+
+head(dem20)
+head(dem20_split$top)
 ```
 
 ## Including Plots
 
+```{r}
+print("bottom")
+unique(dem20_split$bottom$candidate)
+print("top")
+unique(dem20_split$top$candidate)
+```
+
 You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
-plot(pressure)
+make_ggplots <- function(df, cycle, party, description) {
+  
+  legend_nrow <- ceiling(length(df$candidate)/3)
+  
+  gg_poll <- ggplot(df, aes(x=date, y=polling_percentage_normalized)) +
+    geom_line(aes(colour=candidate)) +
+    ggtitle(sprintf("%s %s %s Polling", cycle, description, party)) +
+    xlab("Date") +
+    ylab("Normalized Polls") +
+    guides(fill=guide_legend(ncol = 2))
+  
+  gg_dcount <- ggplot(df, aes(x=date, y=individual_donations_normalized)) +
+    geom_line(aes(colour=candidate)) +
+    ggtitle(sprintf("%s %s %s Donnation Count", cycle, description, party)) +
+    xlab("Date") +
+    ylab("Normalized Donnation Count")
+  
+  gg_dsum <- ggplot(df, aes(x=date, y=individual_donation_amount_normalized)) +
+    geom_line(aes(colour=candidate)) +
+    ggtitle(sprintf("%s %s %s Donnation Sum", cycle, description, party)) +
+    xlab("Date") +
+    ylab("Normalized Donnation Sum")
+  
+  gg_sdcount <- ggplot(df, aes(x=date, y=small_donor_count_normalized)) +
+    geom_line(aes(colour=candidate)) +
+    ggtitle(sprintf("%s %s %s Small Donnation Count (less than $200)", cycle, description, party)) +
+    xlab("Date") +
+    ylab("Normalized Small Donnation Count")
+  
+  gg_tv <- ggplot(df, aes(x=date, y=tv_mentions_normalized)) +
+    geom_line(aes(colour=candidate)) +
+    ggtitle(sprintf("%s %s %s TV Mention Count", cycle, description, party)) +
+    xlab("Date") +
+    ylab("Normalized Cable TV Mentions")
+  
+  return_plots <- list(poll=gg_poll, dcount=gg_dcount, dsum=gg_dsum, sdcount=gg_sdcount, tv=gg_tv)
+  return(return_plots)
+}
+
+
+# Show a time series of the speed limit laws
+#speedLimitMelted <- melt(speedLimit, id=c("year"))
+dem20_ggtop <- make_ggplots(dem20_split$top, "2020", "Democrat", "Top 7")
+dem20_ggbottom <- make_ggplots(dem20_split$bottom, "2020", "Democrat", "Bottom")
+
+# display plots
+ggarrange(dem20_ggtop$poll, dem20_ggbottom$poll, ncol=1, nrow=2)
+ggarrange(dem20_ggtop$dcount, dem20_ggbottom$dcount, ncol=1, nrow=2)
+ggarrange(dem20_ggtop$dsum, dem20_ggbottom$dsum, ncol=1, nrow=2)
+ggarrange(dem20_ggtop$sdcount, dem20_ggbottom$sdcount, ncol=1, nrow=2)
+ggarrange(dem20_ggtop$tv, dem20_ggbottom$tv, ncol=1, nrow=2)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+formula_agg <- ""
+ii = 0
+for (col in colnames(dem20)) {
+  formula_agg <- paste(formula_agg, col, sep="+")
+  if(ii%%4==0) {
+    formula_agg <- paste(formula_agg, "\n")
+  }
+  ii <- ii+1
+}
+print(formula_agg)
+```
+
+
+
+Panel Model: all candidates, weekly aggregate, nlp featrues on polls
+```{r}
+dem20_weekly.panel <- pdata.frame(dem20_weekly, c("candidate", "date"))
+dem20_weekly.panel <- dem20_weekly.panel[!duplicated(rownames(dem20_weekly.panel)),]
+dem20.nlp.fit <- plm(polling_percentage_normalized ~ 
+  X2018.congress+X2020.democractic.party+X2020.democractic.primary+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
+  busing+buttigieg+civil.rights+climate.change+congress+de.blasio+drugs+economic.foreign.policy+electoral.college+female.congresswomen+first.debate+gun.laws+
+  harris+healthcare+hickenlooper+impeachment+inslee+iowa.caucus+iran+iran.afghanistan+israel+kavanaugh+lgbtq+marijuana+mccain+mcconnell+
+  mueller.report+north.korea+o.rourke+prison.reform+puerto.rico+russian.interference+sanders+student.debt+supreme.court+tax.return+
+  tech+trump+trump.racist+unions+us.economy..socialism.vs.captialism.+venezuela+warren+williamson+yang,
+  data=dem20_weekly.panel, model="within")
+
+summary(dem20.nlp.fit)
+```
+
+Panel Model: all candidates, nlp featrues on polls
+```{r}
+dem20.panel <- pdata.frame(dem20, c("candidate", "date"))
+dem20.panel <- dem20.panel[!duplicated(rownames(dem20.panel)),]
+dem20.nlp.fit <- plm(polling_percentage_normalized ~ 
+  X2018.congress+X2020.democractic.party+X2020.democractic.primary+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
+  busing+buttigieg+civil.rights+climate.change+congress+de.blasio+drugs+economic.foreign.policy+electoral.college+female.congresswomen+first.debate+gun.laws+
+  harris+healthcare+hickenlooper+impeachment+inslee+iowa.caucus+iran+iran.afghanistan+israel+kavanaugh+lgbtq+marijuana+mccain+mcconnell+
+  mueller.report+north.korea+o.rourke+prison.reform+puerto.rico+russian.interference+sanders+student.debt+supreme.court+tax.return+
+  tech+trump+trump.racist+unions+us.economy..socialism.vs.captialism.+venezuela+warren+williamson+yang,
+  data=dem20.panel, model="within")
+
+summary(dem20.nlp.fit)
+```
+
+Panel Model: all candidates, nlp featrues on donnation count
+```{r}
+dem20.nlp.fit <- plm(individual_donations_normalized ~ 
+  X2018.congress+X2020.democractic.party+X2020.democractic.primary+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
+  busing+buttigieg+civil.rights+climate.change+congress+de.blasio+drugs+economic.foreign.policy+electoral.college+female.congresswomen+first.debate+gun.laws+
+  harris+healthcare+hickenlooper+impeachment+inslee+iowa.caucus+iran+iran.afghanistan+israel+kavanaugh+lgbtq+marijuana+mccain+mcconnell+
+  mueller.report+north.korea+o.rourke+prison.reform+puerto.rico+russian.interference+sanders+student.debt+supreme.court+tax.return+
+  tech+trump+trump.racist+unions+us.economy..socialism.vs.captialism.+venezuela+warren+williamson+yang,
+  data=dem20.panel, model="within")
+
+summary(dem20.nlp.fit)
+```
+
+
+Panel Model: all candidates, nlp featrues on tv mentions
+```{r}
+dem20.nlp.fit <- plm(tv_mentions_normalized ~ 
+  X2018.congress+X2020.democractic.party+X2020.democractic.primary+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
+  busing+buttigieg+civil.rights+climate.change+congress+de.blasio+drugs+economic.foreign.policy+electoral.college+female.congresswomen+first.debate+gun.laws+
+  harris+healthcare+hickenlooper+impeachment+inslee+iowa.caucus+iran+iran.afghanistan+israel+kavanaugh+lgbtq+marijuana+mccain+mcconnell+
+  mueller.report+north.korea+o.rourke+prison.reform+puerto.rico+russian.interference+sanders+student.debt+supreme.court+tax.return+
+  tech+trump+trump.racist+unions+us.economy..socialism.vs.captialism.+venezuela+warren+williamson+yang,
+  data=dem20.panel, model="within")
+
+summary(dem20.nlp.fit)
+```
+
+
+Panel Model: all candidates, nlp featrues on small donor count
+```{r}
+dem20.nlp.fit <- plm(small_donor_count_normalized ~ 
+  X2018.congress+X2020.democractic.party+X2020.democractic.primary+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
+  busing+buttigieg+civil.rights+climate.change+congress+de.blasio+drugs+economic.foreign.policy+electoral.college+female.congresswomen+first.debate+gun.laws+
+  harris+healthcare+hickenlooper+impeachment+inslee+iowa.caucus+iran+iran.afghanistan+israel+kavanaugh+lgbtq+marijuana+mccain+mcconnell+
+  mueller.report+north.korea+o.rourke+prison.reform+puerto.rico+russian.interference+sanders+student.debt+supreme.court+tax.return+
+  tech+trump+trump.racist+unions+us.economy..socialism.vs.captialism.+venezuela+warren+williamson+yang,
+  data=dem20.panel, model="within")
+
+summary(dem20.nlp.fit)
+```
+
+Panel Model: all candidates, nlp featrues on donnation amount
+```{r}
+dem20.nlp.fit <- plm(individual_donation_amount_normalized ~ 
+  X2018.congress+X2020.democractic.party+X2020.democractic.primary+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
+  busing+buttigieg+civil.rights+climate.change+congress+de.blasio+drugs+economic.foreign.policy+electoral.college+female.congresswomen+first.debate+gun.laws+
+  harris+healthcare+hickenlooper+impeachment+inslee+iowa.caucus+iran+iran.afghanistan+israel+kavanaugh+lgbtq+marijuana+mccain+mcconnell+
+  mueller.report+north.korea+o.rourke+prison.reform+puerto.rico+russian.interference+sanders+student.debt+supreme.court+tax.return+
+  tech+trump+trump.racist+unions+us.economy..socialism.vs.captialism.+venezuela+warren+williamson+yang,
+  data=dem20.panel, model="within")
+
+summary(dem20.nlp.fit)
+```
+
+Panel Model: warren, nlp featrues on polls
+```{r}
+warren <- dem20[dem20$candidate=="warren",]
+warren.panel <- pdata.frame(warren, c("date"))
+warren.panel <- dem20.panel[!duplicated(rownames(dem20.panel)),]
+warren.panel.nlp.fit <- plm(polling_percentage_normalized ~ 
+  X2018.congress+X2020.democractic.party+X2020.democractic.primary+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
+  busing+buttigieg+civil.rights+climate.change+congress+de.blasio+drugs+economic.foreign.policy+electoral.college+female.congresswomen+first.debate+gun.laws+
+  harris+healthcare+hickenlooper+impeachment+inslee+iowa.caucus+iran+iran.afghanistan+israel+kavanaugh+lgbtq+marijuana+mccain+mcconnell+
+  mueller.report+north.korea+o.rourke+prison.reform+puerto.rico+russian.interference+sanders+student.debt+supreme.court+tax.return+
+  tech+trump+trump.racist+unions+us.economy..socialism.vs.captialism.+venezuela+warren+williamson+yang,
+  data=warren.panel, model="within")
+
+summary(warren.panel.nlp.fit)
+```
+
+```{r}
+warren_plot <- warren[c("warren","israel","kavanaugh","date","polling_percentage_normalized","aoc")]
+#"tv_mentions_normalized"
+#"individual_donations_normalized"
+warren_plot$israel <- warren_plot$israel * 10
+warren_plot = melt(warren_plot, id.vars = 'date')
+gg_warren <- ggplot(warren_plot, aes(x=date, y=value)) +
+    geom_line(aes(colour=variable)) +
+    ggtitle("Warren") +
+    xlab("Date") +
+    ylab("Y")
+gg_warren
+```
+
