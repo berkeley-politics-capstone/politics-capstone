@@ -31,35 +31,48 @@ Also surprisingly, the Texan candidates who addressed border concerns in the deb
 
 The model can be used to detect events. Many of the topics have spikes around the first Democratic Primary debate in late June 2019. For example, during the debate Kamala Harris had a viral moment when she attack Joe Biden on the topic of school busing in the late 20th century. We see for these two candidates a clear spike in the topic of "Biden Busing", while for other candidates the spike is less remarkable (and also coincidental for these other candidates).
 
-![Biden Busing](({{site.baseurl}}/candidate_images/Biden Busing.png){:height="200px" width="300px"} <br/>
+![Biden Busing](({{site.baseurl}}/candidate_images/Biden_Busing.png){:height="200px" width="300px"} <br/>
 
 We can pick up on some of the candidates top topics. For instance, Sanders and Warren are outliers when it comes to the topic of student debt.
 
-![Student Debt](({{site.baseurl}}/candidate_images/Student Debt.png){:height="200px" width="300px"} <br/>
+![Student Debt](({{site.baseurl}}/candidate_images/Student_Debt.png){:height="200px" width="300px"} <br/>
 
 While Gabbard stands out on the topic of Iran:
 
-![Gabbard Iran](({{site.baseurl}}/candidate_images/Iran - Gabbard.png)
+![Gabbard Iran](({{site.baseurl}}/candidate_images/Iran_Gabbard.png){:height="200px" width="300px"} <br/> 
 
 Jay Inslee is a climate change #1 campaigner. Here's his relationship to that topic:
 
-![inslee](({{site.baseurl}}/candidate_images/Climate Change - Inslee.png)
+![inslee](({{site.baseurl}}/candidate_images/Climate_Change_Inslee.png){:height="200px" width="300px"} <br/> 
 
 Generally, however we see that candidates in this latest leg of the 2020 primary are most often differentiated by identity and not policy. Here are the top words associated with each candidates topic:
 
 Biden was spread amongst other topics, but he did have a busing topic: biden, busing, would, school, oppose, senate, right, civil, support
+
 Warren: warren, elizabeth, massachusetts, senator, american, native, plan, policy, presidential
+
 Harris: attorney, prosecutor, officer, police, general, office, harris
+
 	harris, abortion, kamala, california, woman, right
+
 Sanders: sanders, democratic, party, bernie, candidate, campaign, progressive
+
 	sanders, campaign, iowa, event, bernie, crowd, hampshire
+
 Buttigieg: buttigieg, mayor, pete, south, bend
+
 O'Rourke: rourke, beto, orourke, texas, paso, city, cruz
+
 Booker: booker, cory, jersey, housing, home, senator, newark, mayor, latinx, city, community, black
+
 Inslee: inslee, climate, change, washington, governor, issue, state, seattle
+
 Yang (mixed with Cuba): yang, andrew, cuba, cuban, basic, drudge, income, automation, communist, entrepreneur, latin, universal, dividend
+
 Williamson: williamson, marianne, young, food, people, love, white, team, woman, spiritual, author
+
 De Blasio: york, city, blasio, cuomo, mayor
+
 Hickenlooper (this got mixed with Pence and Billionaires due to topic size): pence, hickenlooper, colorado, mike, hannity, gates, governor, bezos
 
 Most of the candidate topics above are about the indentity of the candidate, not their policy (with notable exceptions for Yang (UBI) and Inslee (Climate Change)). This tells us that the way the media talks about this wide Democractic field is through the candidates identity. It will be interesting to see as the field narrows if the tone shifts to more policy related ideas.
