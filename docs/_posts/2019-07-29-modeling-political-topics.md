@@ -169,6 +169,8 @@ In order to test proof of concept we created a 20 topic LDA model with all news 
 
 ##### Comment Models
 
+The comments model underwent similar experimentation in order to find the best combination of topics. Below is a visualization of the model done on Reddit Comments:
+
 {% include /plotly/reddit2020_lda.html %}
 
 
