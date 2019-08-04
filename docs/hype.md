@@ -26,7 +26,7 @@ Polls allow us to get an understanding of where candidates rank relative to each
 
 **Articles & Comments** <br/>
 Internet based articles grants us a sense of what the media is discussing online. Similarly, internet users who wish to discuss these events can choose to take to a forum like Reddit to add their comments. By using natural language processing techniques, we can get a sense of what is being discussed online by both the media and the voters, and how this influences the Hype Machine. <br/>
-*Data source: [Reddit](https://www.reddit.com)*
+*Data source: [Reddit](https://www.reddit.com) for links to articles, comments*
 <br/>
 
 
