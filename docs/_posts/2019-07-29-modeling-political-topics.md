@@ -131,7 +131,7 @@ We'll explore some of these topics as it pertains to one of the 2020 Democratic 
 
 With Bernie Sanders, Warren has a growing share, indicating that the two candidates are discussed in conjunction with one another.
 
-![Warren in Bernie topic]({{site.baseurl}}/candidate_images/warren_bernie_plot.png){:height="200px" width="300px"} <br/>
+![Warren in Bernie topic]({{site.baseurl}}/candidate_images/warren_sanders_plot.png){:height="200px" width="300px"} <br/>
 
 Tracking how Warren is discussed with other candidates gives a sense of how voters are comparing and contrasting her to the rest of the playing field. We can also view how Warren is discussed with higher level topics, such as change:
 
@@ -143,15 +143,19 @@ While Warren is frequently discussed with the concept of change, it may be usefu
 
 ![Warren in pro Trump topic]({{site.baseurl}}/candidate_images/warren_protrump_plot.png){:height="200px" width="300px"} <br/>
 
-Elizabeth Warren trends well in both a topic expressing negative opinions on Trump, and on a topic that is specifically pro Trump. Finally, we can view where Warren may need improvement in comparison to other candidates. Kamala Harris has more share on the economy topic:
+Elizabeth Warren trends well in both a topic expressing negative opinions on Trump, and on a topic that is specifically pro Trump. Finally, we can view where Warren may need improvement in comparison to other candidates. On the economy topic, Warren has a persistent presence:
 
 ![Warren in economy topic]({{site.baseurl}}/candidate_images/warren_economy_plot.png){:height="200px" width="300px"} <br/>
 
+However, Warren may have to watch for Kamala Harris' share in the economy topic, due to a recent spike: 
+
 ![Harris in economy topic]({{site.baseurl}}/candidate_images/harris_economy_plot.png){:height="200px" width="300px"} <br/>
 
-While Beto O'Rourke has more share in the immigration topic:
+As for immigration, Warren has faltered just a bit:
 
 ![Warren in immigration topic]({{site.baseurl}}/candidate_images/warren_immigration_plot.png){:height="200px" width="300px"} <br/>
+
+While Beto O'Rourke can be seen having better weeks:
 
 ![O'Rourke in immigration topic]({{site.baseurl}}/candidate_images/orourke_immigration_plot.png){:height="200px" width="300px"} <br/>
 
