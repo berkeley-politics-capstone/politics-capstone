@@ -127,33 +127,33 @@ Sexual Allegations
 	
 We'll explore some of these topics as it pertains to one of the 2020 Democratic candidates, Elizabeth Warren. We can see what share she commands as it relates to topics around two competitors. With Donald Trump, Warren is consistently discussed with him and has seen a sharp increase in the beginning weeks of July:
 
-![Warren in Trump topic]({{site.baseurl}}/candidate_images/warren_trump_plot){:height="200px" width="300px"} <br/>
+![Warren in Trump topic]({{site.baseurl}}/candidate_images/warren_trump_plot.png){:height="200px" width="300px"} <br/>
 
 With Bernie Sanders, Warren has a growing share, indicating that the two candidates are discussed in conjunction with one another.
 
-![Warren in Bernie topic]({{site.baseurl}}/candidate_images/warren_bernie_plot){:height="200px" width="300px"} <br/>
+![Warren in Bernie topic]({{site.baseurl}}/candidate_images/warren_bernie_plot.png){:height="200px" width="300px"} <br/>
 
 Tracking how Warren is discussed with other candidates gives a sense of how voters are comparing and contrasting her to the rest of the playing field. We can also view how Warren is discussed with higher level topics, such as change:
 
-![Warren in change topic]({{site.baseurl}}/candidate_images/warren_change_plot){:height="200px" width="300px"} <br/>
+![Warren in change topic]({{site.baseurl}}/candidate_images/warren_change_plot.png){:height="200px" width="300px"} <br/>
 
 While Warren is frequently discussed with the concept of change, it may be useful to keep an eye on the trend, should she lose that share to a candidate who may be considered more exciting. Warren can also come up in topics that are unexpected, but useful to review:
 
-![Warren in opinions on trump topic]({{site.baseurl}}/candidate_images/warren_optrump_plot){:height="200px" width="300px"} <br/>
+![Warren in opinions on trump topic]({{site.baseurl}}/candidate_images/warren_optrump_plot.png){:height="200px" width="300px"} <br/>
 
-![Warren in pro Trump topic]({{site.baseurl}}/candidate_images/warren_protrump_plot){:height="200px" width="300px"} <br/>
+![Warren in pro Trump topic]({{site.baseurl}}/candidate_images/warren_protrump_plot.png){:height="200px" width="300px"} <br/>
 
 Elizabeth Warren trends well in both a topic expressing negative opinions on Trump, and on a topic that is specifically pro Trump. Finally, we can view where Warren may need improvement in comparison to other candidates. Kamala Harris has more share on the economy topic:
 
-![Warren in economy topic]({{site.baseurl}}/candidate_images/warren_economy_plot){:height="200px" width="300px"} <br/>
+![Warren in economy topic]({{site.baseurl}}/candidate_images/warren_economy_plot.png){:height="200px" width="300px"} <br/>
 
-![Harris in economy topic]({{site.baseurl}}/candidate_images/harris_economy_plot){:height="200px" width="300px"} <br/>
+![Harris in economy topic]({{site.baseurl}}/candidate_images/harris_economy_plot.png){:height="200px" width="300px"} <br/>
 
 While Beto O'Rourke has more share in the immigration topic:
 
-![Warren in immigration topic]({{site.baseurl}}/candidate_images/warren_immigration_plot){:height="200px" width="300px"} <br/>
+![Warren in immigration topic]({{site.baseurl}}/candidate_images/warren_immigration_plot.png){:height="200px" width="300px"} <br/>
 
-![O'Rourke in economy topic]({{site.baseurl}}/candidate_images/orourke_immigration_plot){:height="200px" width="300px"} <br/>
+![O'Rourke in immigration topic]({{site.baseurl}}/candidate_images/orourke_immigration_plot.png){:height="200px" width="300px"} <br/>
 
 By viewing how a candidate like Elizabeth Warren is pervading the topics that come out of Reddit comments, we can see where she tends to come up in discussion and how discourse around her will change as the primaries continue on.
 	
