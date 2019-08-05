@@ -30,7 +30,7 @@ Internet based articles grants us a sense of what the media is discussing online
 <br/>
 
 **Curated Dataset** <br/>
-We have produced two datasets from the above sources which are freely availible to download as CSVs. The 2020 democratic primary contains data for Donnations, Media Coverage, Polling, and [LDA topic models](https://berkeley-politics-capstone.github.io/politics-capstone/2019/07/29/modeling-political-topics.html) from news on r/politics. The 2016 republican primary contains everything except for the LDA topics. <br/>
+We have produced two datasets from the above sources which are freely availible to download as CSV files. The 2020 Democratic primary contains data for Donations, Media Coverage, Polling, and [LDA Topic Models](https://berkeley-politics-capstone.github.io/politics-capstone/2019/07/29/modeling-political-topics.html) from news on r/politics. The 2016 republican primary contains everything except for the LDA topic models. <br/>
 *2020 Democrats: [AWS](https://berkeley-politics-capstone.s3.amazonaws.com/dem20_dataset.csv)* <br/>
 *2016 Republicans: [AWS](https://berkeley-politics-capstone.s3.amazonaws.com/rep16_dataset.csv)* <br/>
 <br/>

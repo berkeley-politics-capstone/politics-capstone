@@ -6,9 +6,9 @@ filename: index
 
 # The Hype Machine
 
-As of August 2019, there were 24 candidates who have declared for the 2020 Democratic primary, all vying to go up against Donald Trump and the GOP. This is more than the 17 candidates who competed in the 2016 Republican primary, where Trump emerged victorious.
+As of August 2019, there are 24 candidates who have declared for the 2020 Democratic primary, all vying to go up against the GOP and their presumed nominee, Donald Trump. This field is more than the 17 candidates who competed in the 2016 Republican primary, where Trump emerged victorious.
 
-Who will emerge as the Democratic candidate in such a complicated, crowded field? The Hype Machine seeks to make sense of the complicated political landscape that's shaping up for the 2020 election.
+Who will come out as the Democratic candidate in such a crowded field? The Hype Machine seeks to make sense of the complicated political landscape that's shaping up for the 2020 election.
 
 # How to Navigate
 
@@ -20,7 +20,7 @@ We've divided this website into the following sections:
 
 * [Blog](https://berkeley-politics-capstone.github.io/politics-capstone/blog.html): We've uncovered interesting, data science based insights into this 2020 Democratic primary, and we invite you to peruse through them.
 
-* [About Us](https://berkeley-politics-capstone.github.io/politics-capstone/about.html): Learn more about the team behind the Hype Machine
+* [About Us](https://berkeley-politics-capstone.github.io/politics-capstone/about.html): Learn more about the team behind the Hype Machine.
 
 # About This Project
 
