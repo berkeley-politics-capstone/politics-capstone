@@ -130,6 +130,8 @@ ggarrange(dem20_ggtop$sdcount, dem20_ggbottom$sdcount, ncol=1, nrow=2)
 ggarrange(dem20_ggtop$tv, dem20_ggbottom$tv, ncol=1, nrow=2)
 ```
 
+
+#### Print out all nlp features for formula
 ```{r}
 formula_agg <- ""
 ii = 0
@@ -143,14 +145,13 @@ for (col in colnames(dem20)) {
 print(formula_agg)
 ```
 
-
-
-Panel Model: all candidates, weekly aggregate, nlp featrues on polls
+## Panel Model: all candidates, weekly aggregate, nlp featrues on polls
+takeaway - easier to predict at weekly level than daily, still not great with all candidates
 ```{r}
 dem20_weekly.panel <- pdata.frame(dem20_weekly, c("candidate", "date"))
 dem20_weekly.panel <- dem20_weekly.panel[!duplicated(rownames(dem20_weekly.panel)),]
 dem20.nlp.fit <- plm(polling_percentage_normalized ~ 
-  X2018.congress+X2020.democractic.party+X2020.democractic.primary+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
+  X2018.congress+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
   busing+buttigieg+civil.rights+climate.change+congress+de.blasio+drugs+economic.foreign.policy+electoral.college+female.congresswomen+first.debate+gun.laws+
   harris+healthcare+hickenlooper+impeachment+inslee+iowa.caucus+iran+iran.afghanistan+israel+kavanaugh+lgbtq+marijuana+mccain+mcconnell+
   mueller.report+north.korea+o.rourke+prison.reform+puerto.rico+russian.interference+sanders+student.debt+supreme.court+tax.return+
@@ -160,12 +161,13 @@ dem20.nlp.fit <- plm(polling_percentage_normalized ~
 summary(dem20.nlp.fit)
 ```
 
-Panel Model: all candidates, nlp featrues on polls
+# Panel Model: all candidates, daily aggregate, nlp featrues on polls
+takeaway: daily is worse than weekly
 ```{r}
 dem20.panel <- pdata.frame(dem20, c("candidate", "date"))
 dem20.panel <- dem20.panel[!duplicated(rownames(dem20.panel)),]
 dem20.nlp.fit <- plm(polling_percentage_normalized ~ 
-  X2018.congress+X2020.democractic.party+X2020.democractic.primary+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
+  X2018.congress+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
   busing+buttigieg+civil.rights+climate.change+congress+de.blasio+drugs+economic.foreign.policy+electoral.college+female.congresswomen+first.debate+gun.laws+
   harris+healthcare+hickenlooper+impeachment+inslee+iowa.caucus+iran+iran.afghanistan+israel+kavanaugh+lgbtq+marijuana+mccain+mcconnell+
   mueller.report+north.korea+o.rourke+prison.reform+puerto.rico+russian.interference+sanders+student.debt+supreme.court+tax.return+
@@ -175,87 +177,250 @@ dem20.nlp.fit <- plm(polling_percentage_normalized ~
 summary(dem20.nlp.fit)
 ```
 
-Panel Model: all candidates, nlp featrues on donnation count
+## Panel Model: all candidates, weekly aggregate, nlp featrues on donnation count
+takeaway: donnation count is slightly harder to predict than polls
 ```{r}
 dem20.nlp.fit <- plm(individual_donations_normalized ~ 
-  X2018.congress+X2020.democractic.party+X2020.democractic.primary+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
+  X2018.congress+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
   busing+buttigieg+civil.rights+climate.change+congress+de.blasio+drugs+economic.foreign.policy+electoral.college+female.congresswomen+first.debate+gun.laws+
   harris+healthcare+hickenlooper+impeachment+inslee+iowa.caucus+iran+iran.afghanistan+israel+kavanaugh+lgbtq+marijuana+mccain+mcconnell+
   mueller.report+north.korea+o.rourke+prison.reform+puerto.rico+russian.interference+sanders+student.debt+supreme.court+tax.return+
   tech+trump+trump.racist+unions+us.economy..socialism.vs.captialism.+venezuela+warren+williamson+yang,
-  data=dem20.panel, model="within")
+  data=dem20_weekly.panel, model="within")
 
 summary(dem20.nlp.fit)
 ```
 
-
-Panel Model: all candidates, nlp featrues on tv mentions
+## Panel Model: all candidates, weekly aggregate, nlp featrues on tv mentions
+takeaway: tv mentions are about the same as polling in prediction quality
 ```{r}
 dem20.nlp.fit <- plm(tv_mentions_normalized ~ 
-  X2018.congress+X2020.democractic.party+X2020.democractic.primary+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
+  X2018.congress+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
   busing+buttigieg+civil.rights+climate.change+congress+de.blasio+drugs+economic.foreign.policy+electoral.college+female.congresswomen+first.debate+gun.laws+
   harris+healthcare+hickenlooper+impeachment+inslee+iowa.caucus+iran+iran.afghanistan+israel+kavanaugh+lgbtq+marijuana+mccain+mcconnell+
   mueller.report+north.korea+o.rourke+prison.reform+puerto.rico+russian.interference+sanders+student.debt+supreme.court+tax.return+
   tech+trump+trump.racist+unions+us.economy..socialism.vs.captialism.+venezuela+warren+williamson+yang,
-  data=dem20.panel, model="within")
+  data=dem20_weekly.panel, model="within")
 
 summary(dem20.nlp.fit)
 ```
 
 
-Panel Model: all candidates, nlp featrues on small donor count
+## Panel Model: all candidates, weekly aggregate, nlp featrues on small donor count
+takeaway: small donor cound is the same as regualr donor count
 ```{r}
 dem20.nlp.fit <- plm(small_donor_count_normalized ~ 
-  X2018.congress+X2020.democractic.party+X2020.democractic.primary+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
+  X2018.congress+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
   busing+buttigieg+civil.rights+climate.change+congress+de.blasio+drugs+economic.foreign.policy+electoral.college+female.congresswomen+first.debate+gun.laws+
   harris+healthcare+hickenlooper+impeachment+inslee+iowa.caucus+iran+iran.afghanistan+israel+kavanaugh+lgbtq+marijuana+mccain+mcconnell+
   mueller.report+north.korea+o.rourke+prison.reform+puerto.rico+russian.interference+sanders+student.debt+supreme.court+tax.return+
   tech+trump+trump.racist+unions+us.economy..socialism.vs.captialism.+venezuela+warren+williamson+yang,
-  data=dem20.panel, model="within")
+  data=dem20_weekly.panel, model="within")
 
 summary(dem20.nlp.fit)
 ```
 
-Panel Model: all candidates, nlp featrues on donnation amount
+## Panel Model: all candidates, nlp featrues on donnation amount
+takeaway: donnation amount is slightly harder to predict than donnation count
 ```{r}
 dem20.nlp.fit <- plm(individual_donation_amount_normalized ~ 
-  X2018.congress+X2020.democractic.party+X2020.democractic.primary+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
+  X2018.congress+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
   busing+buttigieg+civil.rights+climate.change+congress+de.blasio+drugs+economic.foreign.policy+electoral.college+female.congresswomen+first.debate+gun.laws+
   harris+healthcare+hickenlooper+impeachment+inslee+iowa.caucus+iran+iran.afghanistan+israel+kavanaugh+lgbtq+marijuana+mccain+mcconnell+
   mueller.report+north.korea+o.rourke+prison.reform+puerto.rico+russian.interference+sanders+student.debt+supreme.court+tax.return+
   tech+trump+trump.racist+unions+us.economy..socialism.vs.captialism.+venezuela+warren+williamson+yang,
-  data=dem20.panel, model="within")
+  data=dem20_weekly.panel, model="within")
 
 summary(dem20.nlp.fit)
 ```
 
-Panel Model: warren, nlp featrues on polls
+## Hunting for Significance
+Looking at linear models for single_candidate_polling ~ single_nlp_feature. Use the resulting p-values and r-squared to decide which to explore further
 ```{r}
-warren <- dem20[dem20$candidate=="warren",]
-warren.panel <- pdata.frame(warren, c("date"))
-warren.panel <- dem20.panel[!duplicated(rownames(dem20.panel)),]
-warren.panel.nlp.fit <- plm(polling_percentage_normalized ~ 
-  X2018.congress+X2020.democractic.party+X2020.democractic.primary+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
-  busing+buttigieg+civil.rights+climate.change+congress+de.blasio+drugs+economic.foreign.policy+electoral.college+female.congresswomen+first.debate+gun.laws+
-  harris+healthcare+hickenlooper+impeachment+inslee+iowa.caucus+iran+iran.afghanistan+israel+kavanaugh+lgbtq+marijuana+mccain+mcconnell+
-  mueller.report+north.korea+o.rourke+prison.reform+puerto.rico+russian.interference+sanders+student.debt+supreme.court+tax.return+
-  tech+trump+trump.racist+unions+us.economy..socialism.vs.captialism.+venezuela+warren+williamson+yang,
-  data=warren.panel, model="within")
-
-summary(warren.panel.nlp.fit)
+dem20_fits <- c()
+for(candid in unique(dem20_split$top$candidate)) {
+  
+  # get candidate data
+  candid_df <- dem20_weekly[dem20_weekly$candidate==candid,]
+  candid_df <- within(candid_df, rm("candidate"))
+  candid_panel <- pdata.frame(candid_df, c("date"))
+  candid_panel <- candid_panel[!duplicated(rownames(candid_panel)),]
+  
+  # run candidate total regression
+  candid_fit <- lm(polling_percentage_normalized ~ 
+    X2018.congress+X2020.democratic.primary+X2020.election+aoc+assange+biden.busing+booker+border+
+    busing+buttigieg+civil.rights+climate.change+congress+de.blasio+drugs+economic.foreign.policy+
+    electoral.college+female.congresswomen+first.debate+gun.laws+harris+healthcare+hickenlooper+
+    impeachment+inslee+iowa.caucus+iran+iran.afghanistan+israel+kavanaugh+lgbtq+marijuana+mccain+
+    mcconnell+mueller.report+north.korea+o.rourke+prison.reform+puerto.rico+russian.interference+
+    sanders+student.debt+supreme.court+tax.return+tech+trump+trump.racist+unions+
+    us.economy..socialism.vs.captialism.+venezuela+warren+williamson+yang,
+    data=candid_panel)
+  print(paste("*****",candid,"r-squared:",summary(candid_fit)$r.squared,sep = " "))
+  
+  # run independant regressions on each variable
+  for(colname in colnames(candid_panel)) {
+    if(colname %in% c(colnames(rep16),"time")) {
+      #print(paste("[PASS]",candid,colname,sep=" "))
+    }
+    else {
+      #print(paste("[TEST]",candid,colname,sep=" "))
+      tmpdf <- candid_panel[,c("polling_percentage_normalized", colname)]
+      colnames(tmpdf) <- c("y", "x")
+      fit <- lm(y ~ x, data=tmpdf)
+      fit_summary <- summary(fit)
+      fit_coef <- fit_summary$coefficients[2,]
+      if(fit_coef[4]<0.1) {
+        print(paste(candid,colname,"coef:",fit_coef[1],"intercept:",fit_summary$coefficients[1,1],"std-error:",fit_coef[2],"p-value:",fit_coef[4],"r-squared:",fit_summary$r.squared,sep = " "))
+      }
+    }
+  }
+}
 ```
 
+### Helper Function for Linear Regression
 ```{r}
-warren_plot <- warren[c("warren","israel","kavanaugh","date","polling_percentage_normalized","aoc")]
+regression_plot <- function(candid_panel, candid_fit, candid) {
+  candid_panel$predicted_polling_percentage <- candid_fit$fitted.values
+  plot_panel <- melt(candid_panel[,c("date","predicted_polling_percentage","polling_percentage_normalized",names(candid_fit$coefficients[2:length(candid_fit$coefficients)]))], id.vars = 'date')
+  gg_fit <- ggplot(plot_panel, aes(x=date, y=value, color=variable, group=variable)) +
+      geom_point(aes(colour=variable), size = 0.5) +
+      geom_path(aes(colour=variable)) +
+      theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+      ggtitle(paste(candid,"regression ( r-squared:",round(summary(candid_fit)$r.squared,3),")")) +
+      xlab("Date") +
+      ylab("Normalized Value")
+  return(gg_fit)
+}
+```
+
+## Biden
+takeaway: very high predictive power, 
+```{r}
+candid <- "biden"
+
+# get candidate data
+candid_df <- dem20_weekly[dem20_weekly$candidate==candid,]
+candid_df <- within(candid_df, rm("candidate"))
+candid_panel <- pdata.frame(candid_df, c("date"))
+candid_panel <- candid_panel[!duplicated(rownames(candid_panel)),]
+
+# run candidate total regression
+candid_fit <- lm(polling_percentage_normalized ~ 
+  buttigieg+economic.foreign.policy+mcconnell+tax.return+unions+us.economy..socialism.vs.captialism.,
+  data=candid_panel)
+
+summary(candid_fit)
+regression_plot(candid_panel, candid_fit, candid)
+```
+
+## Harris
+```{r}
+candid <- "harris"
+
+# get candidate data
+candid_df <- dem20_weekly[dem20_weekly$candidate==candid,]
+candid_df <- within(candid_df, rm("candidate"))
+candid_panel <- data.frame(candid_df, c("date"))
+candid_panel <- candid_panel[!duplicated(rownames(candid_panel)),]
+
+# run candidate total regression
+candid_fit <- lm(polling_percentage_normalized ~ 
+  aoc+booker+buttigieg+harris+impeachment,
+  data=candid_panel)
+
+summary(candid_fit)
+regression_plot(candid_panel, candid_fit, candid)
+```
+
+## Buttigieg
+```{r}
+candid <- "buttigieg"
+
+# get candidate data
+candid_df <- dem20_weekly[dem20_weekly$candidate==candid,]
+candid_df <- within(candid_df, rm("candidate"))
+candid_panel <- pdata.frame(candid_df, c("date"))
+candid_panel <- candid_panel[!duplicated(rownames(candid_panel)),]
+
+# run candidate total regression
+candid_fit <- lm(polling_percentage_normalized ~ 
+  X2018.congress+border+female.congresswomen+impeachment+trump,
+  data=candid_panel)
+
+summary(candid_fit)
+regression_plot(candid_panel, candid_fit, candid)
+```
+
+## Warren Model
+
+```{r}
+candid <- "warren"
+
+# get candidate data
+candid_df <- dem20_weekly[dem20_weekly$candidate==candid,]
+candid_df <- within(candid_df, rm("candidate"))
+candid_panel <- pdata.frame(candid_df, c("date"))
+candid_panel <- candid_panel[!duplicated(rownames(candid_panel)),]
+
+# run candidate total regression
+candid_fit <- lm(polling_percentage_normalized ~ 
+  border+female.congresswomen+student.debt+warren,
+  data=candid_panel)
+
+summary(candid_fit)
+regression_plot(candid_panel, candid_fit, candid)
+```
+
+## Sanders
+```{r}
+candid <- "sanders"
+
+# get candidate data
+candid_df <- dem20_weekly[dem20_weekly$candidate==candid,]
+candid_df <- within(candid_df, rm("candidate"))
+candid_panel <- pdata.frame(candid_df, c("date"))
+candid_panel <- candid_panel[!duplicated(rownames(candid_panel)),]
+
+# run candidate total regression
+candid_fit <- lm(polling_percentage_normalized ~ 
+  economic.foreign.policy+impeachment+sanders+student.debt,
+  data=candid_panel)
+
+summary(candid_fit)
+regression_plot(candid_panel, candid_fit, candid)
+```
+
+## Booker
+```{r}
+candid <- "booker"
+
+# get candidate data
+candid_df <- dem20_weekly[dem20_weekly$candidate==candid,]
+candid_df <- within(candid_df, rm("candidate"))
+candid_panel <- pdata.frame(candid_df, c("date"))
+candid_panel <- candid_panel[!duplicated(rownames(candid_panel)),]
+
+# run candidate total regression
+candid_fit <- lm(polling_percentage_normalized ~ 
+  border+buttigieg+climate.change+sanders,
+  data=candid_panel)
+
+summary(candid_fit)
+regression_plot(candid_panel, candid_fit, candid)
+```
+
+
+```{r}
+#warren_plot <- warren[c("warren","mcconnell","female.congresswomen","date","polling_percentage_normalized","border")]
 #"tv_mentions_normalized"
 #"individual_donations_normalized"
-warren_plot$israel <- warren_plot$israel * 10
-warren_plot = melt(warren_plot, id.vars = 'date')
-gg_warren <- ggplot(warren_plot, aes(x=date, y=value)) +
-    geom_line(aes(colour=variable)) +
-    ggtitle("Warren") +
-    xlab("Date") +
-    ylab("Y")
-gg_warren
+#warren_plot$israel <- warren_plot$israel * 10
+#warren_plot = melt(warren_plot, id.vars = 'date')
+#gg_warren <- ggplot(warren_plot, aes(x=date, y=value)) +
+#    geom_line(aes(colour=variable)) +
+#    ggtitle("Warren") +
+#    xlab("Date") +
+#    ylab("Y")
+#gg_warren
 ```
-
